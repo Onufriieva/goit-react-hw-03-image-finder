@@ -1,4 +1,4 @@
-import ImageGalleryItem from "imageGalleryItem/ImageGalleryItem";
+import ImageGalleryItem from 'components/imageGalleryItem/ImageGalleryItem';
 
 const ImageGallery = () => {
     return(

@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import Modal from "components/modal/Modal";
+import ImageGallery from "components/imageGallery/ImageGallery";
+import Searchbar from "components/searchbar/Searchbar";
 
 
 export class App extends Component {
@@ -29,7 +31,10 @@ const { showModal } = this.state;
           color: '#010101'
         }}
       >
-        {showModal && <Modal>
+        <button type="button" onClick={this.toggleModal}>Open modal</button>
+        <Searchbar/>
+        <ImageGallery/>
+          {showModal && <Modal onClose={this.toggleModal}>
           <button type="button" onClick={this.toggleModal}>Close</button>
            </Modal>}
       </div>
