@@ -1,13 +1,18 @@
+import React, {Component} from "react";
+import { createPortal } from "react-dom";
 
+const modalRoot = document.querySelector('#modal-root');
 
-const Modal = () => {
-    return(
-        <div class="overlay">
-          <div class="modal">
-            <img src="" alt="" />
-          </div>
-        </div>
-    )
+export default class Modal extends Component {
+
+    render() {
+        return createPortal(
+            <div class="overlay">
+                <div class="modal">
+                  <img src="" alt="" />
+                </div>
+            </div>,
+          modalRoot,
+        )
+    }
 };
-
-export default Modal;
