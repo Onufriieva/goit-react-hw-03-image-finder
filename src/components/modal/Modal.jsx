@@ -6,9 +6,11 @@ const modalRoot = document.querySelector('#modal-root');
 
 export default class Modal extends Component {
 
+ 
+
     componentDidMount() {
-        window.addEventListener('keydown', this.handleKeyDown)
-    };
+      window.addEventListener('keydown', this.handleKeyDown)
+  };
 
     componentWillUnmount() {
         window.removeEventListener('keydown', this.handleKeyDown)
@@ -32,7 +34,7 @@ export default class Modal extends Component {
         return createPortal(
             <BackdropDiv onClick={this.closeBackdropClick}>
                 <ModalDiv>
-                  <img src={this.props.bigImage} alt="" />
+                  <img src={this.props} alt="" />
                 </ModalDiv>
             </BackdropDiv>,
           modalRoot,
