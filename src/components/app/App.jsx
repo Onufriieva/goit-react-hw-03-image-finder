@@ -8,31 +8,36 @@ export class App extends Component {
 
   state = {
     showModal: false,
+    photos: [],
+    inputValue: '',
   }
 
+  FormSubmit = inputValue => {
+    this.setState({inputValue: inputValue})
+  };
+
+
+
+
+
+  // toggleModal = () => {
+  //   this.setState(state => ({
+  //     showModal: !state.showModal})
+  //   )
+  // }
 
   toggleModal = () => {
-    this.setState(state => ({
-      showModal: !state.showModal})
-    )
-  }
+    this.setState(({ showModal }) => ({ 
+      showModal: !showModal }));
+  };
 
   render() {
 const { showModal } = this.state;
 
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101'
-        }}
-      >
+      <div>
         <button type="button" onClick={this.toggleModal}>Open modal</button>
-        <Searchbar/>
+        <Searchbar onSubmit={this.FormSubmit}/>
         <ImageGallery/>
           {showModal && <Modal onClose={this.toggleModal}>
           <button type="button" onClick={this.toggleModal}>Close</button>

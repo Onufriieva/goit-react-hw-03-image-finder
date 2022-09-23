@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { createPortal } from "react-dom";
+import { BackdropDiv, ModalDiv } from "./ModalStyled";
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -29,11 +30,11 @@ export default class Modal extends Component {
 
     render() {
         return createPortal(
-            <div class="overlay" onClick={this.closeBackdropClick}>
-                <div class="modal">
-                  <img src="" alt="" />
-                </div>
-            </div>,
+            <BackdropDiv onClick={this.closeBackdropClick}>
+                <ModalDiv>
+                  <img src={this.props.bigImage} alt="" />
+                </ModalDiv>
+            </BackdropDiv>,
           modalRoot,
         )
     }

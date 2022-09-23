@@ -2,7 +2,7 @@
 
 const ImageGalleryItem = () => {
     return(
-        <li class="gallery-item">
+        <li >
           <img src="" alt="" />
         </li>
     )
