@@ -29,7 +29,7 @@ export const SearchForm = styled.form`
   overflow: hidden;
 `;
 
-export const SearchFormBtn = styled.button`
+export const SearchBtn = styled.button`
   display: inline-block;
   width: 48px;
   height: 48px;
@@ -59,7 +59,7 @@ export const SearchFormBtnLabel = styled.span`
   border: 0;
 `;
 
-export const SearchFormInput = styled.input`
+export const SearchInput = styled.input`
   display: inline-block;
   width: 100%;
   font: inherit;

@@ -1,25 +1,10 @@
-// import ImageGalleryItem from 'components/imageGalleryItem/ImageGalleryItem';
-
-
-// const ImageGallery = () => {
-//     return (
-//       <ul>
-//         <ImageGalleryItem />
-
-//       </ul>
-//     );
-//   };
-  
-//   export default ImageGallery;
-
-
 import PropTypes from 'prop-types';
-import { Gallery } from './ImageGalleryStyled';
+import { GalleryList } from './ImageGalleryStyled';
 import  ImageGalleryItem  from 'components/imageGalleryItem/ImageGalleryItem';
 
  const ImageGallery = ({ images, onClick }) => {
   return (
-    <Gallery>
+    <GalleryList>
       {images.length > 0 &&
         images.map(({ id, webformatURL, largeImageURL, tags }) => {
           return (
@@ -32,7 +17,7 @@ import  ImageGalleryItem  from 'components/imageGalleryItem/ImageGalleryItem';
             ></ImageGalleryItem>
           );
         })}
-    </Gallery>
+    </GalleryList>
   );
 };
 
