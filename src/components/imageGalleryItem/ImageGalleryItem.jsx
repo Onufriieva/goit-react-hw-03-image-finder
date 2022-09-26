@@ -1,14 +1,14 @@
 
 
-const ImageGalleryItem = () => {
-    return(
-        <li >
-          <img src="" alt="" />
-        </li>
-    )
-};
+// const ImageGalleryItem = () => {
+//     return(
+//         <li >
+//           <img src="" alt="" />
+//         </li>
+//     )
+// };
 
-export default ImageGalleryItem;
+// export default ImageGalleryItem;
 
 
 // import PropTypes from 'prop-types';
@@ -27,3 +27,22 @@ export default ImageGalleryItem;
 
 // export default ImageGalleryItem;
 
+import PropTypes from 'prop-types';
+import { GalleryItem, GalleryImg } from './ImageGalleryItemStyled';
+
+const ImageGalleryItem = ({ image, name, largeImg, onClick }) => {
+  return (
+    <GalleryItem onClick={() => onClick(largeImg)}>
+      <GalleryImg src={image} alt={name} />
+    </GalleryItem>
+  );
+};
+
+ImageGalleryItem.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  largeImg: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+export default ImageGalleryItem;
